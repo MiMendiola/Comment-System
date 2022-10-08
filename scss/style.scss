@@ -1,0 +1,106 @@
+:root{
+    --border-color: #558bff;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e1e34;
+}
+
+.comments-container{
+    width: 800px;
+    margin: 100px auto;
+    color: white;
+
+    & >.comment{
+        margin-bottom: 10px;
+    }
+
+    .comment{
+        display: flex;
+        width: 100%;
+
+        .line{
+            position: relative;
+            width: 10px;
+            height: 50%;
+            border-left: solid 1px var(--border-color);
+            border-bottom: solid 1px var(--border-color);
+            border-radius: 0 0 0 10px;
+        }
+
+        .comment-wrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .content{
+                display: flex;
+                border: solid 1px var(--border-color);
+                padding: 10px;
+                border-radius: 3px;
+                background-color: #182b50;
+
+                img{
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    padding-right: 10px;
+                }
+
+                .comment-info{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .header{
+                        .username{
+                            font-weight: bold;
+                        }
+
+                        .date{
+                            color: #999;
+                        }
+                    }
+
+                    .actions{
+                        display: flex;
+                        gap: 5px;
+
+                        button{
+                            border: none;
+                            background-color: transparent;
+                            color: var(--border-color);
+                            padding: 5px;
+                            border-radius: 3px;
+                            cursor: pointer;
+
+                            &:hover{
+                                color: white;
+                                background-color: var(--border-color);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .replies{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 35px;
+            padding-top: 10px;
+
+            &::before{
+                content: "";
+                position: absolute;
+                background-color: var(--border-color);
+                width: 1px;
+                top: 0;
+                height: calc(100% - 50px);
+            }
+        }
+    }
+}
